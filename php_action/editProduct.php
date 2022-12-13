@@ -1,7 +1,7 @@
 <?php 	
 
 require_once 'core.php';
-11111111
+1111111
 
 $valid['success'] = array('success' => false, 'messages' => array());
 
