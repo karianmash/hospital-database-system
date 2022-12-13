@@ -1,5 +1,5 @@
 var manageProductTable;
-11
+1
 $(document).ready(function() {
 	// top nav bar 
 	$('#navProduct').addClass('active');
