@@ -307,12 +307,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `companyid`) VALUES
-(1, 'b@gmail.com', '214', 'b@gmail.com', 5437265),
-(2, 'admin', '1234', 'brianmwe425@gmail.com', 5437265),
+(1, 'test_user1@gmail.com', '1234', 'test_user1@gmail.com', 5437265),
+(2, 'admin', '1234', 'test_user2@gmail.com', 5437265),
 (3, 'Mike', '1234', 'm@gmail.com', 5437265),
-(4, 'hdhd', '1234', 'hfdhd@gmail.com', 5437265),
-(5, 'fafaf', '1234', 'faf@gmail.com', 5437265),
-(6, 'hioh', '1234', 'jn@gmail.com', 5437265);
+(4, 'test_user2@gmail.com', '1234', 'test_user2@gmail.com', 5437265),
+(5, 'test_user3@gmail.com', '1234', 'test_user3@gmail.com', 5437265),
+(6, 'test_user4@gmail.com', '1234', 'test_user4@gmail.com', 5437265);
 
 --
 -- Indexes for dumped tables

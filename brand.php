@@ -99,7 +99,7 @@
 					<h4 class="modal-title"><i class="fa fa-edit"></i> Edit Brand</h4>
 				</div>
 				<div class="modal-body">
-
+					<!-- Hi -->
 					<div id="edit-brand-messages"></div>
 
 					<div class="modal-loading div-hide" style="width:50px; margin:auto;padding-top:50px; padding-bottom:50px;">

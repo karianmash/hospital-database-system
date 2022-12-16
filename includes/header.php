@@ -82,17 +82,18 @@
 
 
 			</div>
-			<div class="editlog">
-				<a class="navbar-brand" href="#" style="padding:10px;font-family:lucinda; color: #0b1120; font-weight: 700; font-size: 3rem">
-					Klinika Wholesalers
-					<!-- <img src="logo.png" alt="" style="width:100%"> -->
-				</a>
+			<div class="editlog" style="height: 100%; background-color: transparent;">
+				<!-- <a class="navbar-brand" href="#" style="padding:10px;font-family:lucinda; color: #0b1120; font-weight: 700; font-size: 3rem"> -->
+				<!-- Klinika Wholesalers -->
+				<!-- </a> -->
+				<img src="krinika-logo.png" alt="" style="width:13rem; height: 10rem;">
 
 
 			</div>
+			<!-- <img src="..//krinika.jpg" width="40rem" height="40rem" alt=""> -->
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="position: relative; top: -7rem;">
 
 				<ul class="nav navbar-nav navbar-right" id="nav2">
 

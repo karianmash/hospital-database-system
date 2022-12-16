@@ -1,101 +1,97 @@
-<?php 
+<?php
 require_once 'php_action/db_connect.php';
-
-
-
 
 $errors = array();
 $errors = [];
 
-    if($_POST) {
+if ($_POST) {
 
     $username        = $_POST['username'];
-    $password        = $_POST['password']; 
-    $email           = $_POST['email'];    
+    $password        = $_POST['password'];
+    $email           = $_POST['email'];
     $companyid        =        $_POST['companyid'];
     $companyname      =        $_POST['companyname'];
     $companyaddress   =        $_POST['companyaddress'];
     $licenceno        =        $_POST['licenceno'];
     $phoneno          =        $_POST['phoneno'];
 
-	if(empty($companyid) || empty($companyname) || empty($companyaddress) || empty($licenceno) || empty($phoneno) || empty( $username) || empty($password)|| empty($email)) {
-        if($password  == "") {
-			$errors[] = "password is required";
-		}
-        if($username == "") {
-			$errors[] = "username is required";
-		}
-        if($companyid == "") {
-			$errors[] = "companyid is required";
-		} 
-        if($companyname==""){
-            $errors[]="Company name required";
+    if (empty($companyid) || empty($companyname) || empty($companyaddress) || empty($licenceno) || empty($phoneno) || empty($username) || empty($password) || empty($email)) {
+        if ($password  == "") {
+            $errors[] = "password is required";
         }
-        if($companyaddress==""){
-            $errors[]="Company address required";
+        if ($username == "") {
+            $errors[] = "username is required";
         }
-        if($licenceno==""){
-            $errors[]="licence no is required";
+        if ($companyid == "") {
+            $errors[] = "companyid is required";
         }
-        if($phoneno==""){
-            $errors[]="phone no is reuired";
+        if ($companyname == "") {
+            $errors[] = "Company name required";
         }
-    }else{
+        if ($companyaddress == "") {
+            $errors[] = "Company address required";
+        }
+        if ($licenceno == "") {
+            $errors[] = "licence no is required";
+        }
+        if ($phoneno == "") {
+            $errors[] = "phone no is reuired";
+        }
+    } else {
         $sql1 = "SELECT * FROM users WHERE username = '$username'";
         $result = $connect->query($sql1);
-        if($result->num_rows > 0){
-                $errors[]="username already exit";
+        if ($result->num_rows > 0) {
+            $errors[] = "username already exit";
+        } else {
 
-        }else{
-    
-        $sql = "INSERT INTO users (username,password,email,companyid,companyname,companyaddress,licenceno,phoneno)
+            $sql = "INSERT INTO users (username,password,email,companyid,companyname,companyaddress,licenceno,phoneno)
         VALUES ('$username','$password','$email','$companyid','$companyname','$companyaddress','$licenceno','$phoneno')";
-       if($connect->query($sql) === TRUE) {
-        
-        $errors['messages'] = "Successfully Added";
-       }
-        else {
-            
-            $errors['messages'] = "Error while adding the members";
+            if ($connect->query($sql) === TRUE) {
+
+                $errors['messages'] = "Successfully Added";
+            } else {
+
+                $errors['messages'] = "Error while adding the members";
+            }
         }
     }
-    }
-     }
-    
-    
+}
+
+
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Stock Management System</title>
+    <title>Stock Management System</title>
 
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="assests/bootstrap/css/bootstrap.min.css">
-	<!-- bootstrap theme-->
-	<link rel="stylesheet" href="assests/bootstrap/css/bootstrap-theme.min.css">
-	<!-- font awesome -->
-	<link rel="stylesheet" href="assests/font-awesome/css/font-awesome.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assests/bootstrap/css/bootstrap.min.css">
+    <!-- bootstrap theme-->
+    <link rel="stylesheet" href="assests/bootstrap/css/bootstrap-theme.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="assests/font-awesome/css/font-awesome.min.css">
 
-  <!-- custom css -->
-  <link rel="stylesheet" href="custom/css/custom.css">	
+    <!-- custom css -->
+    <link rel="stylesheet" href="custom/css/custom.css">
 
-  <!-- jquery -->
-	<script src="assests/jquery/jquery.min.js"></script>
-  <!-- jquery ui -->  
-  <link rel="stylesheet" href="assests/jquery-ui/jquery-ui.min.css">
-  <script src="assests/jquery-ui/jquery-ui.min.js"></script>
+    <!-- jquery -->
+    <script src="assests/jquery/jquery.min.js"></script>
+    <!-- jquery ui -->
+    <link rel="stylesheet" href="assests/jquery-ui/jquery-ui.min.css">
+    <script src="assests/jquery-ui/jquery-ui.min.js"></script>
 
-  <!-- bootstrap js -->
-	<script src="assests/bootstrap/js/bootstrap.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="assests/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 
-    <body>
-      
-        <!-- Content Wrapper -->
-        <div class="login-wrapper">
-            <div class="container-center lg">
-             <div class="login-area">
+<body>
+
+    <!-- Content Wrapper -->
+    <div class="login-wrapper">
+        <div class="container-center lg">
+            <div class="login-area">
                 <div class="panel panel-bd panel-custom">
                     <div class="panel-heading">
                         <div class="view-header">
@@ -109,20 +105,20 @@ $errors = [];
                         </div>
                     </div>
                     <div class="panel-body">
-                    <div class="messages">
-							<?php if($errors) {
-								foreach ($errors as $key => $value) {
-									echo '<div class="alert alert-warning" role="alert">
+                        <div class="messages">
+                            <?php if ($errors) {
+                                foreach ($errors as $key => $value) {
+                                    echo '<div class="alert alert-warning" role="alert">
 									<i class="glyphicon glyphicon-exclamation-sign"></i>
-									'.$value.'</div>';										
-									}
-								} ?>
-						</div>
-                  
-                        
+									' . $value . '</div>';
+                                }
+                            } ?>
+                        </div>
+
+
                         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" id="registerform" method="post">
                             <div class="row ">
-                            <div class="form-group col-lg-6">
+                                <div class="form-group col-lg-6">
                                     <label>Username</label>
                                     <input type="text" value="" id="username" class="form-control" name="username">
                                     <span class="help-block small">Your unique username to app</span>
@@ -169,17 +165,17 @@ $errors = [];
                                 </div>
                             </div>
                             <div>
-                            <button type="submit" name="register" class="btn btn-default"> <i class="glyphicon glyphicon-log-in"></i> Register</button>
-                            <br>
-                            
-                            <a href="index.php">Click To Login</a>
-                                
+                                <button type="submit" name="register" class="btn btn-default"> <i class="glyphicon glyphicon-log-in"></i> Register</button>
+                                <br>
+
+                                <a href="index.php">Click To Login</a>
+
                             </div>
                         </form>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <?php require_once 'includes/footer.php'; ?>
+    <?php require_once 'includes/footer.php'; ?>
