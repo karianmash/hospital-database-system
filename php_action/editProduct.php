@@ -2,6 +2,7 @@
 
 require_once 'core.php';
 
+
 $valid['success'] = array('success' => false, 'messages' => array());
 
 if($_POST) {
