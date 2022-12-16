@@ -114,7 +114,7 @@
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="editBrandName" placeholder="Brand Name" name="editBrandName" autocomplete="off">
 							</div>
-						</div> <!-- /form-group-->
+						</div> <!-- form-group-->
 						<div class="form-group">
 							<label for="editBrandStatus" class="col-sm-3 control-label">Status: </label>
 							<label class="col-sm-1 control-label">: </label>
