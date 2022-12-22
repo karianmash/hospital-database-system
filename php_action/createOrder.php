@@ -2,7 +2,7 @@
 //ALTER TABLE `orders` ADD `payment_place` INT NOT NULL AFTER `payment_status`;
 //TER TABLE `orders` ADD `gstn` VARCHAR(255) NOT NULL AFTER `payment_place`;
 require_once 'core.php';
-1111
+111
 $valid['success'] = array('success' => false, 'messages' => array(), 'order_id' => '');
 // print_r($valid);
 if($_POST) {
