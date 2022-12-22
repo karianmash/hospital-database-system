@@ -1,5 +1,5 @@
 var manageUserTable;
-11
+1
 $(document).ready(function() {
 	// top nav bar
 	$('#topNavUser').addClass('active');
