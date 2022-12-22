@@ -9,7 +9,7 @@ $(document).ready(function() {
 		'order': []
 	});
 
-	// add product modal btn clicked
+	// add product modal btn clicked.
 	$("#addUserModalBtn").unbind('click').bind('click', function() {
 		// // product form reset
 		$("#submitUserForm")[0].reset();
